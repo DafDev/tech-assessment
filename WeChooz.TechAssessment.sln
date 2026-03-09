@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeChooz.TechAssessment.Domain", "WeChooz.TechAssessment.Domain\WeChooz.TechAssessment.Domain.csproj", "{67B725D6-FB4B-425A-AF87-04E9C3F0A211}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeChooz.TechAssessment.Domain.Tests", "WeChooz.TechAssessment.Domain.Tests\WeChooz.TechAssessment.Domain.Tests.csproj", "{DE2CDB97-E0F5-4B6D-AE36-CC2B6F00F9FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +90,18 @@ Global
 		{67B725D6-FB4B-425A-AF87-04E9C3F0A211}.Release|x64.Build.0 = Release|Any CPU
 		{67B725D6-FB4B-425A-AF87-04E9C3F0A211}.Release|x86.ActiveCfg = Release|Any CPU
 		{67B725D6-FB4B-425A-AF87-04E9C3F0A211}.Release|x86.Build.0 = Release|Any CPU
+		{DE2CDB97-E0F5-4B6D-AE36-CC2B6F00F9FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE2CDB97-E0F5-4B6D-AE36-CC2B6F00F9FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE2CDB97-E0F5-4B6D-AE36-CC2B6F00F9FE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DE2CDB97-E0F5-4B6D-AE36-CC2B6F00F9FE}.Debug|x64.Build.0 = Debug|Any CPU
+		{DE2CDB97-E0F5-4B6D-AE36-CC2B6F00F9FE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DE2CDB97-E0F5-4B6D-AE36-CC2B6F00F9FE}.Debug|x86.Build.0 = Debug|Any CPU
+		{DE2CDB97-E0F5-4B6D-AE36-CC2B6F00F9FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE2CDB97-E0F5-4B6D-AE36-CC2B6F00F9FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE2CDB97-E0F5-4B6D-AE36-CC2B6F00F9FE}.Release|x64.ActiveCfg = Release|Any CPU
+		{DE2CDB97-E0F5-4B6D-AE36-CC2B6F00F9FE}.Release|x64.Build.0 = Release|Any CPU
+		{DE2CDB97-E0F5-4B6D-AE36-CC2B6F00F9FE}.Release|x86.ActiveCfg = Release|Any CPU
+		{DE2CDB97-E0F5-4B6D-AE36-CC2B6F00F9FE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
