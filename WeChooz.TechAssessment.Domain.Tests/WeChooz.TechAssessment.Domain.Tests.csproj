@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WeChooz.TechAssessment.Web\WeChooz.TechAssessment.Web.csproj" />
+    <ProjectReference Include="..\WeChooz.TechAssessment.Domain\WeChooz.TechAssessment.Domain.csproj" />
   </ItemGroup>
 
 </Project>
