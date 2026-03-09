@@ -18,6 +18,7 @@ var cache = builder.AddRedis("cache")
 builder.AddProject<Projects.WeChooz_TechAssessment_Web>("webfrontend")
     .AddNpmRestore()
     .WithExternalHttpEndpoints()
+    .WithReference(formationDb).WaitFor(formationDb)
     .WithReference(cache).WaitFor(cache)
     ;
 
