@@ -8,7 +8,7 @@ public class SessionTests
     {
         // Arrange
         var course = new Course("Course Title", "Short Description", 5, 3, TargetDemographic.ElectedMember, _instructor);
-        var session = new Session(course, new DateTimeOffset(new DateTime(2026, 3, 15)));
+        var session = new Session(course, new DateTimeOffset(new DateTime(2026, 3, 15)), DeliveryMode.OnSite);
         var attendant = new Attendant(new Person("Jane", "Smith"), TargetDemographic.ElectedMember);
 
         // Act
@@ -28,7 +28,7 @@ public class SessionTests
             new Attendant(new Person("John", "Doe"), TargetDemographic.ElectedMember)
         ];
         var course = new Course("Course Title", "Short Description", 5, 2, TargetDemographic.ElectedMember, _instructor);
-        var session = new Session(course, new DateTimeOffset(new DateTime(2026, 3, 15)), initialAttendants);
+        var session = new Session(course, new DateTimeOffset(new DateTime(2026, 3, 15)), DeliveryMode.Remote, initialAttendants);
         var attendantAlice = new Attendant(new Person("Alice", "Johnson"), TargetDemographic.ElectedMember);
 
         // Act
