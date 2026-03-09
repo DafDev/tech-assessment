@@ -12,7 +12,7 @@ public class Session(Course course, DateTimeOffset startDate, DeliveryMode deliv
 
     public bool AddAttendant(Attendant attendant)
     {
-        if (IsAttendantNotAllowed(attendant) || IsFull) return false;
+        if (IsAttendantNotAllowed(attendant)) return false;
 
         Attendants = Attendants.Append(attendant);
         return true;
@@ -20,7 +20,11 @@ public class Session(Course course, DateTimeOffset startDate, DeliveryMode deliv
 
     private bool IsAttendantNotAllowed(Attendant attendant)
     {
-        if (attendant.TargetDemographic is TargetDemographic.ElectedMember && Course.TargetDemographic is TargetDemographic.President)
+        if (Attendants.Contains(attendant)) return true;
+
+        if (IsFull
+            || attendant.TargetDemographic is TargetDemographic.ElectedMember && Course.TargetDemographic is TargetDemographic.President  
+        )
             return true;
 
         return false;
