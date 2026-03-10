@@ -11,13 +11,17 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\WeChooz.TechAssessment.Web\WeChooz.TechAssessment.Web.csproj" />
+		<ProjectReference Include="..\WeChooz.TechAssessment.Database.SqlServer\WeChooz.TechAssessment.Database.SqlServer.sqlproj"
+		                  IsAspireProjectResource="false"
+		                  ReferenceOutputAssembly="false" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Aspire.Hosting.AppHost" Version="13.1.0" />
 		<PackageReference Include="Aspire.Hosting.Docker" Version="13.1.2-preview.1.26125.13" />
 		<PackageReference Include="Aspire.Hosting.Redis" Version="13.1.0" />
-		<PackageReference Include="Aspire.Hosting.SqlServer" Version="13.1.0" />
+
+		<PackageReference Include="CommunityToolkit.Aspire.Hosting.SqlDatabaseProjects" Version="13.1.1" />
 		<PackageReference Include="WeChooz.Aspire.Hosting.NpmRestore" Version="1.0.2" />
 	</ItemGroup>
 
