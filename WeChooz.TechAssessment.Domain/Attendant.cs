@@ -1,12 +1,12 @@
 namespace WeChooz.TechAssessment.Domain;
 
-public class Attendant(Person person, TargetDemographic targetDemographic, string email = "", string companyName = "") : IEquatable<Attendant>
+public class Attendant(Person person, TargetDemographic targetDemographic, string email = "", string companyName = "", Guid? id = null) : IEquatable<Attendant>
 {
     public Person Person { get; set; } = person;
     public TargetDemographic TargetDemographic { get; set; } = targetDemographic;
     public string Email { get; set; } = email;
     public string CompanyName { get; set; } = companyName;
-
+    public readonly Guid Id = id ?? Guid.NewGuid();
 
     public bool Equals(Attendant? other)
         => other is not null 
