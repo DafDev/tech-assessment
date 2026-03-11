@@ -7,5 +7,5 @@ CREATE TABLE [dbo].[courses]
   [DurationInDays] INT NOT NULL,
   [MaxParticipants] INT NOT NULL,
   [TargetDemographic] INT NOT NULL,
-  [Instructor] NVARCHAR(150) NOT NULL,
-)
+  [Instructor] NVARCHAR(150) NOT NULL
+);

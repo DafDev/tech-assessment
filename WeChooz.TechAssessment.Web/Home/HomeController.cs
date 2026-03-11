@@ -1,14 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Net.Http.Headers;
+using WeChooz.TechAssessment.Domain.Adapters;
 
 namespace WeChooz.TechAssessment.Web.Home;
 
-public class HomeController : Controller
+public class HomeController(IManageSessions sessionManager) : Controller
 {
+
     [HttpGet]
-    public ActionResult Handle()
+    public async Task<IActionResult> Handle()
     {
         Response.Headers[HeaderNames.CacheControl] = "no-cache, must-revalidate";
-        return View();
+        var sessions = await sessionManager.GetSessions();
+        return View(sessions);
     }
 }

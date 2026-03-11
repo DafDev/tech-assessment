@@ -1,6 +1,8 @@
 namespace WeChooz.TechAssessment.Domain;
-public class Session(Course course, DateTimeOffset startDate, DeliveryMode deliveryMode, IEnumerable<Attendant>? attendants = null)
+public class Session(Course course, DateTimeOffset startDate, DeliveryMode deliveryMode, IEnumerable<Attendant>? attendants = null, Guid? id = null)
 {
+    public readonly Guid Id = id ?? Guid.NewGuid();
+
     public Course Course { get; set; } = course;
     public DateTimeOffset StartDate { get; set; } = startDate;
     public DeliveryMode DeliveryMode { get; set; } = deliveryMode;
