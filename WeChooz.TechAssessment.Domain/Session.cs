@@ -1,12 +1,14 @@
 namespace WeChooz.TechAssessment.Domain;
 public class Session(Course course, DateTimeOffset startDate, DeliveryMode deliveryMode, IEnumerable<Attendant>? attendants = null, Guid? id = null)
 {
-    public readonly Guid Id = id ?? Guid.NewGuid();
+    protected Session() : this(null!, default, default) { }
+
+    public Guid Id { get; private set; } = id ?? Guid.NewGuid();
 
     public Course Course { get; set; } = course;
     public DateTimeOffset StartDate { get; set; } = startDate;
     public DeliveryMode DeliveryMode { get; set; } = deliveryMode;
-    public IEnumerable<Attendant> Attendants { get; set; } = attendants ?? [];
+    public List<Attendant> Attendants { get; set; } = attendants?.ToList() ?? [];
 
     public int AvailableSeats => Course.MaxParticipants - Attendants.Count();
 
@@ -16,7 +18,7 @@ public class Session(Course course, DateTimeOffset startDate, DeliveryMode deliv
     {
         if (IsAttendantNotAllowed(attendant)) return false;
 
-        Attendants = Attendants.Append(attendant);
+        Attendants.Add(attendant);
         return true;
     }
 

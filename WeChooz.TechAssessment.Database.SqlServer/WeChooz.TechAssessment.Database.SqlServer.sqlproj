@@ -3,4 +3,8 @@
     <TargetFramework>net10.0</TargetFramework>
     <SqlServerVersion>SqlAzure</SqlServerVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <Build Remove="Scripts\seed.sql" />
+    <PostDeploy Include="Scripts\seed.sql" />
+  </ItemGroup>
 </Project>
