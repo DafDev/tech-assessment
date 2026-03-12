@@ -21,9 +21,11 @@ public class HomeController(IManageSessions sessionManager) : Controller
         {
             courseTitle = s.Course.Title,
             shortDescription = s.Course.ShortDescription,
+            longDescription = s.Course.LongDescription,
             startDate = s.StartDate.ToString("yyyy-MM-dd"),
             durationInDays = s.Course.DurationInDays,
-            instructor = s.Course.Instructor.ToString()
+            instructor = s.Course.Instructor.ToString(),
+            availableSeats = s.AvailableSeats
         });
         return Ok(result);
     }
