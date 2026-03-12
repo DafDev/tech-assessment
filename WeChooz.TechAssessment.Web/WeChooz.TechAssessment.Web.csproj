@@ -12,11 +12,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WeChooz.TechAssessment.ServiceDefaults\WeChooz.TechAssessment.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\WeChooz.TechAssessment.Infra\WeChooz.TechAssessment.Infra.csproj" />
+    <ProjectReference Include="..\WeChooz.TechAssessment.Domain\WeChooz.TechAssessment.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Ardalis.ApiEndpoints" Version="4.1.0" />
     <PackageReference Include="Aspire.StackExchange.Redis.OutputCaching" Version="13.1.0" />
+    <PackageReference Include="EFCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.4" />
     <PackageReference Include="Vite.AspNetCore" Version="2.4.1" />
   </ItemGroup>
 

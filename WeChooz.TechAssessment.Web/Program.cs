@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.EntityFrameworkCore;
 using Vite.AspNetCore;
+using WeChooz.TechAssessment.Domain.Adapters;
+using WeChooz.TechAssessment.Infra;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,7 +33,10 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("Sales", policy => policy.Combine(defaultPolicy).RequireRole("sales"));
 });
 
-
+// Register application services.
+builder.Services.AddScoped<IManageSessions, SessionManager>();
+builder.Services.AddDbContext<SessionContext>(options =>
+    options.UseSqlServer(sqlServerConnectionString));
 builder.Services.AddViteServices(options =>
 {
     options.Server.Port = 5180;

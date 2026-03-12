@@ -7,6 +7,17 @@ var sqlServer = builder.AddSqlServer("sql-server", sqlServerPassword, 5678)
                         .WithEndpoint("tcp", endpoint => endpoint.IsProxied = false);
 var formationDb = sqlServer.AddDatabase("formation");
 
+var dacpacPath = Path.GetFullPath(
+    Path.Combine(builder.AppHostDirectory, "..",
+        "WeChooz.TechAssessment.Database.SqlServer",
+        "bin", "Debug", "net10.0",
+        "WeChooz.TechAssessment.Database.SqlServer.dacpac"));
+
+builder.AddSqlProject("formation-db")
+    .WithDacpac(dacpacPath)
+    .WithReference(formationDb)
+    .WaitFor(sqlServer);
+
 var cache = builder.AddRedis("cache")
                     .WithContainerName("redis_cache")
                     .WithLifetime(ContainerLifetime.Persistent)
@@ -18,6 +29,7 @@ var cache = builder.AddRedis("cache")
 builder.AddProject<Projects.WeChooz_TechAssessment_Web>("webfrontend")
     .AddNpmRestore()
     .WithExternalHttpEndpoints()
+    .WithReference(formationDb).WaitFor(formationDb)
     .WithReference(cache).WaitFor(cache)
     ;
 

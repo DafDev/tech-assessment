@@ -2,6 +2,7 @@
  * Name: vite.config.ts
  * Description: Vite configuration file
  */
+import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { spawn } from "child_process";
 import fs from "fs";
@@ -50,7 +51,7 @@ export default defineConfig(async () => {
     }
 
     const config: UserConfig = {
-        plugins: [react(), viteTsconfigPaths({ loose: true })],
+        plugins: [react(), viteTsconfigPaths({ loose: true }), tailwindcss()],
         clearScreen: true,
         appType: "custom",
         root: path.resolve(__dirname, "ClientApp", "src"),
